@@ -1,0 +1,150 @@
+:root {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #232323;
+    font-size: 1.5rem;
+    overflow-x: hidden;
+  }
+  header {
+    background-color: #232323;
+    padding: 2rem;
+    overflow: hidden; /*CAMBIAR ESTE VALOR A HIDDEN*/
+  }
+  
+  /*----unificar el header con el h1----*/
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    float: left;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 6rem;
+  }
+  
+  header a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px; /* padding a nuestros elem del nav*/
+    display: block;
+  }
+  /*pseudo clase*/
+  header a:hover {
+    background-color: #fff;
+    color: #232323;
+  }
+  
+  nav {
+    float: right;
+  }
+  nav ul li {
+    display: inline-block;
+  }
+  
+  /*----------------- CLASE 2 -----------------*/
+  /* ----------------IMAGENES --------------- */
+  
+  #productos-destacados figure {
+    float: left; /*SI NO LE PONGO UN FLOAT LEFT SE APILAN Y NECESITO QUE TODO SE AGRUPE */
+    width: 100vw; /*Unidad relativa al viewport VIEWPORT WIDTH*/
+    position: relative;
+  }
+  img {
+    display: block; /*CONVERTIMOS EL ELEMENTO IMG EN BLOQUE*/
+    width: 100%;
+    height: -webkit-fill-available;
+    
+
+  }
+  
+  #productos-destacados figcaption {
+    background-color: #232323;
+    padding: 2rem; /*20 px*/
+  }
+  
+  #productos-destacados h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 30px;
+  }
+  
+  /*---------------- animaciones -------------------*/
+  #productos-destacados  {
+    width: calc(100vw * 2);
+    /* 300vw ---- Unidad relativa al viewport VIEWPORT WIDTH ----- vw (viewport-width)*/
+    /*LE METEMOS 300 PORQUE CADA IMG VALE 100VW*/
+    overflow: hidden; /*CAMBIAR ESTE VALOR A HIDDEN*/
+    animation: 15s slider infinite;
+    /*-------short-cut ------ duracion, nombre, cantidad de veces */
+  }
+  
+  /*
+    animation-name: slider;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+  */
+  
+  /*vamos a usar medidas relativas al viewport
+  -- width:100vw; (anchura del 100% de la anchura de la ventana gráfica)*/
+  
+  /*-----VAMOS A MANIPULAR EL MARGIN PARA HACER APARECER Y DESAPARECER LAS IMG*/
+  @keyframes slider {
+    0% {
+      margin-left: 0; /*En el 0% le decimos que no haga nada, esta la img 1 con ancho del 100% del viewport*/
+    }
+    20% {
+      margin-left: 0;
+    }
+    
+  
+    60% {
+      margin-left: -100vw;
+      /*Cuando haya transcurrido el 80% de la animacion , el margin left sera del -200% de la ventana*/
+    }
+    80% {
+      margin-left: -100vw;
+    }
+    100%{
+        margin-left: 0;
+    }
+  }
+  
+  /*-------------------------------------------------*/
+  .noticia {
+    display: flex;
+    border-bottom: solid 1px #a8a8a8;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .noticia-img {
+    width: 30%;
+  }
+  
+  .noticia:last-child {
+    border: none;
+  }
+  
+  .noticia-texto {
+    width: 65%;
+  }
+  
+  /*----------------------------------------------*/
+  
+  #datos{
+      background-image: url(../img/portada.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 300px;
+      width: 100%;
+  }
+  #datos div table{
+      text-align: center;
+  }
